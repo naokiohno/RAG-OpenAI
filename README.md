@@ -1,5 +1,5 @@
 # RAG-OpenAI
-A proof of concept application of RAG using an OpenAI GPT model and langchain.
+A proof of concept application of RAG using an OpenAI GPT model and LangChain.
 
 It is specifically designed to process user specified pdf files, and use them as input for the model. The model then uses the content of the files
 as context, summarising the documents or answering specific questions about them. This is a very popular application of LLM, and enables organisations
