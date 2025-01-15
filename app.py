@@ -21,7 +21,7 @@ def check_for_api_key():
     else:
         print("API Key found")
 
-def check_if_api_key_is_authentic():
+def authenticate_api_key():
     client = openai.OpenAI()
     client.models.list()
     try:
@@ -54,7 +54,7 @@ def make_query(query_string):
 
 # Check, set, and authenticate API key
 check_for_api_key()
-check_if_api_key_is_authentic()
+authenticate_api_key()
 
 # Load and process data.
 pdf_file_path = 'data/cv_pdf_files/'
