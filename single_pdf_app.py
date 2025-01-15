@@ -1,4 +1,9 @@
 
+'''
+This script was written in Python version 3.12. For best reproducibility, create a fresh virtual environment (venv)
+specifically for this project, and install requirements.txt using pip.
+'''
+
 # Load libraries
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_openai import OpenAIEmbeddings
