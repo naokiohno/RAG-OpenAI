@@ -12,7 +12,24 @@ from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 from langchain_openai import ChatOpenAI
 import os
+import openai
 
+def check_for_api_key():
+    if os.environ["OPENAI_API_KEY"] == "":
+        api_key = input("API key not found in environmental variables. Please enter your OpenAI API key: ")
+        os.environ["OPENAI_API_KEY"] = api_key
+    else:
+        print("API Key found")
+
+def check_if_api_key_is_authentic():
+    client = openai.OpenAI()
+    client.models.list()
+    try:
+        client.models.list()
+    except openai.AuthenticationError:
+        raise ValueError("Authentication error. Make sure you're using a valid API key")
+    else:
+        print("Successful authentication")
 
 def create_file_paths(folder_path):
     dir_list = os.listdir(folder_path)
@@ -29,6 +46,17 @@ def load_and_split_multiple_files(list_of_file_paths):
         output.extend(pages)
     return output
 
+def make_query(query_string):
+    result = conversation_chain({"question": query_string})
+    answer = result["answer"]
+    print("The answer is:\n" + answer)
+
+
+# Check, set, and authenticate API key
+check_for_api_key()
+check_if_api_key_is_authentic()
+
+# Load and process data.
 pdf_file_path = 'data/cv_pdf_files/'
 full_pdf_file_paths = create_file_paths(pdf_file_path)
 final_pages = load_and_split_multiple_files(full_pdf_file_paths)
@@ -36,6 +64,7 @@ final_pages = load_and_split_multiple_files(full_pdf_file_paths)
 embeddings = OpenAIEmbeddings()
 vectorstore = FAISS.from_documents(final_pages, embedding=embeddings)
 
+# Create model
 llm = ChatOpenAI(temperature=0.7, model_name="gpt-4")
 memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
 
@@ -46,11 +75,7 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
     memory=memory
 )
 
-def make_query(query_string):
-    result = conversation_chain({"question": query_string})
-    answer = result["answer"]
-    print("The answer is:\n" + answer)
-
+# Make example queries
 make_query('Who in the context is best qualified for a Java programmer role?')
 make_query('Who in the context has more Python experience?')
 make_query('Who in the context has the most management experience?')

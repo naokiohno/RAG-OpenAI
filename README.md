@@ -9,12 +9,12 @@ stakeholders to derive insights without bespoke data analysis or extensive resea
 The model was tested as an HR screening application that helps recruiters filter candidates based on the criteria of choice (tech stack, leadership experience, etc).
 The input data in this application is a list of CVs.
 
-# Scripts
+# Code
 
-* The script called 'single_pdf_app.py' takes only a single pdf file as input. This is an adaptation the following medium article:
+* The code is an adaptation the following medium article:
 https://medium.com/@infoalex1/creating-a-rag-system-with-openai-to-analyze-existing-pdf-documents-e52044f05f9c
 
-* In the script 'multip_pdf_app' I improved upon the method of the Medium article by implementing a vectorised approach enabling users to add multiple PDF files.
+* I improved upon the method of the Medium article by implementing a looped approach that enables users to add multiple PDF files to the context.
 This significantly improves the tool for HR screening, as multiple candidates can now be compared across a variety of criteria based on user input.
 
 # Examples
