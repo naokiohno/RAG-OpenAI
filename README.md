@@ -1,6 +1,8 @@
 # RAG-OpenAI
 A proof of concept application of RAG using an OpenAI GPT model and LangChain.
 
+You can follow along my tutorial in my Medium [article](https://medium.com/@ohnonaoki95/rag-with-openai-and-langchain-using-multiple-pdf-documents-291a56f9d264).
+
 It is specifically designed to process user specified pdf files, and use them as input for the model. The model then uses the content of the files
 as context, summarising the documents or answering specific questions about them. This is a very popular application of LLM, and enables organisations
 to consolidate a large number of unstructured data sources, such as pdf files, Power Point presentations, and Word documents. This enables non-technical
