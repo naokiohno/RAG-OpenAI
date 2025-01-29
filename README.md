@@ -21,11 +21,11 @@ This significantly improves the tool for HR screening, as multiple candidates ca
 
 # Examples
 
-**Query:** Who in the context is best qualified for a Java programmer role?
+**Query:** Who in the context is best qualified for a Java programmer role?  
 **Answer:** Based on the provided context, Sebastian Mercer is best qualified for a Java programmer role. He has experience as a Senior Software Engineer and Software Development Team Lead, and his skills section lists Java as one of his programming languages.
 
-**Query:** Who in the context has the most data science experience?
+**Query:** Who in the context has the most data science experience?  
 **Answer:** Based on the provided context, the individual with the most data science experience is Naoki Ohno. His work experience includes roles as a Data Scientist at Royal Ballet and Opera, an Interim Data Scientist, and a Junior Digital Analyst.
 
-**Query** Who in the context has the most management experience?
+**Query** Who in the context has the most management experience?  
 **Answer:** Sebastian Mercer has the most management experience in the provided context. He has worked as a Senior Software Engineer where he led a team of five developers in the implementation of a real-time chat application. He also held the position of a Software Development Team Lead.
