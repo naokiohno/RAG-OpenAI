@@ -13,8 +13,8 @@ The input data in this application is a list of CVs.
 
 # Code
 
-* The code is an adaptation the following medium article:
-https://medium.com/@infoalex1/creating-a-rag-system-with-openai-to-analyze-existing-pdf-documents-e52044f05f9c
+* The code is an adaptation this Medium [article](https://medium.com/@infoalex1/creating-a-rag-system-with-openai-to-analyze-existing-pdf-documents-e52044f05f9c):
+
 
 * I improved upon the method of the Medium article by implementing a looped approach that enables users to add multiple PDF files to the context.
 This significantly improves the tool for HR screening, as multiple candidates can now be compared across a variety of criteria based on user input.
